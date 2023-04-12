@@ -46,6 +46,7 @@
     <Compile Include="Auto.cs" />
     <Compile Include="AutoConLimitadorVelocidad.cs" />
     <Compile Include="Clase.cs" />
+    <Compile Include="Clase2\CajaAhorro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
