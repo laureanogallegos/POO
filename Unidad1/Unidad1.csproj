@@ -54,6 +54,8 @@
     <Compile Include="Clase4\Titular.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrabajoIntegradorUnidad1\Alumno.cs" />
+    <Compile Include="TrabajoIntegradorUnidad1\ListaDeAlumnos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
