@@ -124,5 +124,22 @@ namespace Unidad1.TrabajoIntegradorUnidad2
             }
             return listaJugadores.AsReadOnly();
         }
+
+        public ReadOnlyCollection<Arquero> ListarArqueros()
+        {
+            return jugadores.OfType<Arquero>().ToList().AsReadOnly();
+        }
+        public ReadOnlyCollection<Defensor> ListarDefensores()
+        {
+            return jugadores.OfType<Defensor>().ToList().AsReadOnly();
+        }
+        public ReadOnlyCollection<Mediocampista> ListarMedioCampistas()
+        {
+            return jugadores.OfType<Mediocampista>().ToList().AsReadOnly();
+        }
+        public ReadOnlyCollection<Delantero> ListarDelanteros()
+        {
+            return jugadores.OfType<Delantero>().ToList().AsReadOnly();
+        }
     }
 }
