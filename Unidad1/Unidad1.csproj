@@ -56,6 +56,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrabajoIntegradorUnidad1\Alumno.cs" />
     <Compile Include="TrabajoIntegradorUnidad1\ListaDeAlumnos.cs" />
+    <Compile Include="TrabajoIntegradorUnidad2\Arquero.cs" />
+    <Compile Include="TrabajoIntegradorUnidad2\Defensor.cs" />
+    <Compile Include="TrabajoIntegradorUnidad2\Delantero.cs" />
+    <Compile Include="TrabajoIntegradorUnidad2\Equipo.cs" />
+    <Compile Include="TrabajoIntegradorUnidad2\Jugador.cs" />
+    <Compile Include="TrabajoIntegradorUnidad2\Mediocampista.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
