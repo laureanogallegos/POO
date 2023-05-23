@@ -11,11 +11,11 @@ namespace Unidad1
     {
         static void Main(string[] args)
         {
-           // Clase1();
+            // Clase1();
 
-            Clase2();// creo metodos para separar cada ejercicio del main y no hacer un main monolitito
+            //Clase2();// creo metodos para separar cada ejercicio del main y no hacer un main monolitito
 
-
+            Parcial1();
         }
 
         private static void Clase2()
@@ -96,5 +96,8 @@ namespace Unidad1
             var valor3 = clase1.Propiedad3;
             */
         }
+
+        private static void Parcial1()
+        { }
     }
 }
