@@ -73,7 +73,7 @@ namespace Unidad1.Parcial1TN
         {
             if (pasajeros.Count < capacidadMaxima)
             {
-                var pasajeroExiste = pasajeros.FirstOrDefault(pasajeroExistente => pasajeroExistente.DNI.ToLower() == pasajeroExistente.DNI.ToLower());
+                var pasajeroExiste = pasajeros.FirstOrDefault(pasajeroExistente => pasajeroExistente.DNI.ToLower() == pasajero.DNI.ToLower());
                 if (pasajeroExiste == null)
                 {
                     var costoBoletoAbonar = 0;
@@ -86,6 +86,7 @@ namespace Unidad1.Parcial1TN
                     else if (pasajero is Pasajero)
                     {
                         montoTotalBoletos += costoBoleto;
+                        costoBoletoAbonar = costoBoleto;
                     }
                     return $"El pasajero {pasajero.Nombre} {pasajero.Apellido} debe abonar {costoBoletoAbonar}";
                 }
