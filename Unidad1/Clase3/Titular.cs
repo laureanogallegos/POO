@@ -11,6 +11,6 @@ namespace Unidad1.Clase2.Ejemplo2
         private string nombre;
         private string apellido;
         private DateTime FechaNacimiento;
-        private int dni
+
     }
 }

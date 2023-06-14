@@ -10,7 +10,7 @@
         }
         public override string ToString()
         {
-            return $"***********************\r\nArquero:\r\nNombre y Apellido: {base.Nombre} {base.Apellido}\r\nFecha de nacimiento: {base.FechaNacimiento}\r\nEdad: {base.Edad}\r\Cantidad de asistencias:{cantidadAsistencias}\r\n";
+            return "";// $"***********************\r\nArquero:\r\nNombre y Apellido: {base.Nombre} {base.Apellido}\r\nFecha de nacimiento: {base.FechaNacimiento}\r\nEdad: {base.Edad}\r\Cantidad de asistencias:{cantidadAsistencias}\r\n";
         }
     }
 }
