@@ -14,6 +14,8 @@ namespace WinForms
     {
         private RepositorioCategorias repositorioCategorias; //declare una variable de instancia
         private RepositorioProductos repositorioProductos;
+        private Categoria categoriaEncontrada;
+        private Producto productoEncontrado;
         public frmGestion()
         {
             InitializeComponent();
@@ -51,6 +53,8 @@ namespace WinForms
 
         private void RefrescarGrilla()
         {
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = repositorioProductos.Listar();
             dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = repositorioCategorias.Listar();
             cBoxCategorias.DataSource = null;
@@ -75,7 +79,6 @@ namespace WinForms
                 MessageBox.Show("Ingrese todos los datos de la categoria");
             }
         }
-        Categoria categoriaEncontrada;
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtNombre.Text))
@@ -110,10 +113,67 @@ namespace WinForms
             {
                 var categoria = (Categoria)cBoxCategorias.SelectedItem;
                 var producto = new Producto();
+                producto.Codigo = txtCodigoProducto.Text;
+                producto.Nombre = txtNombreProducto.Text;
                 producto.Categoria = categoria;
+                producto.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                producto.PrecioCompra= Convert.ToDecimal(txtPrecioCompra.Text);
                 var mensaje = repositorioProductos.Agregar(producto);
+                RefrescarGrilla();
                 MessageBox.Show(mensaje);
             } 
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            if (dgvProductos.RowCount > 0)
+            {
+                var productoSeleccionado = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                if (productoSeleccionado != null)
+                {
+                    mensaje = repositorioProductos.Eliminar(productoSeleccionado);
+                    RefrescarGrilla();
+                }
+                else
+                {
+                    mensaje = "No hay elemntos";
+                }
+                MessageBox.Show(mensaje);
+            }
+            else
+            {
+                MessageBox.Show("No hay categorias para eliminar");
+            }
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCodigoProducto.Text) && !string.IsNullOrEmpty(txtNombreProducto.Text))
+            {
+
+                productoEncontrado.Nombre = txtNombre.Text;
+                productoEncontrado.Categoria = (Categoria)cBoxCategorias.SelectedItem;
+                productoEncontrado.PrecioCompra = Convert.ToDecimal(txtPrecioCompra.Text);
+                productoEncontrado.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                var mensaje = repositorioProductos.Modificar(productoEncontrado);
+                RefrescarGrilla();
+                MessageBox.Show(mensaje);
+
+            }
+        }
+        
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProductos.RowCount > 0)
+            {
+                productoEncontrado = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                txtCodigoProducto.Text = productoEncontrado.Codigo;
+                txtNombreProducto.Text = productoEncontrado.Nombre;
+                txtPrecioCompra.Text = productoEncontrado.PrecioCompra.ToString();
+                txtPrecioVenta.Text = productoEncontrado.PrecioVenta.ToString();
+
+            }
         }
     }
 }
