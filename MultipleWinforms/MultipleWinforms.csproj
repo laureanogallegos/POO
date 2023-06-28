@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="RepositorioProductos.cs" />
     <EmbeddedResource Include="FormGestionCategoria.resx">
       <DependentUpon>FormGestionCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionProducto.resx">
+      <DependentUpon>FormGestionProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionProductos.resx">
       <DependentUpon>FormGestionProductos.cs</DependentUpon>

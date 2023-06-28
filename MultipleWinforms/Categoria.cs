@@ -19,5 +19,10 @@ namespace MultipleWinforms
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
+
+        public override string ToString()
+        {
+            return Codigo + " - " + Nombre;
+        }
     }
 }

@@ -31,10 +31,11 @@
             this.gBoxProductos = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gBoxCategorias = new System.Windows.Forms.GroupBox();
-            this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
-            this.btnModificarCategoria = new System.Windows.Forms.Button();
             this.btnEliminarCategoria = new System.Windows.Forms.Button();
+            this.btnModificarCategoria = new System.Windows.Forms.Button();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.gBoxProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gBoxCategorias.SuspendLayout();
@@ -46,6 +47,7 @@
             this.gBoxProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gBoxProductos.Controls.Add(this.btnAgregarProducto);
             this.gBoxProductos.Controls.Add(this.dgvProductos);
             this.gBoxProductos.Location = new System.Drawing.Point(12, 12);
             this.gBoxProductos.Name = "gBoxProductos";
@@ -83,6 +85,36 @@
             this.gBoxCategorias.TabStop = false;
             this.gBoxCategorias.Text = "Categorias";
             // 
+            // btnEliminarCategoria
+            // 
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(221, 297);
+            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
+            this.btnEliminarCategoria.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarCategoria.TabIndex = 3;
+            this.btnEliminarCategoria.Text = "Eliminar";
+            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
+            // 
+            // btnModificarCategoria
+            // 
+            this.btnModificarCategoria.Location = new System.Drawing.Point(114, 298);
+            this.btnModificarCategoria.Name = "btnModificarCategoria";
+            this.btnModificarCategoria.Size = new System.Drawing.Size(75, 23);
+            this.btnModificarCategoria.TabIndex = 2;
+            this.btnModificarCategoria.Text = "Modificar";
+            this.btnModificarCategoria.UseVisualStyleBackColor = true;
+            this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(7, 298);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarCategoria.TabIndex = 1;
+            this.btnAgregarCategoria.Text = "Agregar";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            // 
             // dgvCategorias
             // 
             this.dgvCategorias.AllowUserToAddRows = false;
@@ -101,35 +133,15 @@
             this.dgvCategorias.Size = new System.Drawing.Size(289, 271);
             this.dgvCategorias.TabIndex = 0;
             // 
-            // btnAgregarCategoria
+            // btnAgregarProducto
             // 
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(7, 298);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCategoria.TabIndex = 1;
-            this.btnAgregarCategoria.Text = "Agregar";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
-            // 
-            // btnModificarCategoria
-            // 
-            this.btnModificarCategoria.Location = new System.Drawing.Point(114, 298);
-            this.btnModificarCategoria.Name = "btnModificarCategoria";
-            this.btnModificarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnModificarCategoria.TabIndex = 2;
-            this.btnModificarCategoria.Text = "Modificar";
-            this.btnModificarCategoria.UseVisualStyleBackColor = true;
-            this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
-            // 
-            // btnEliminarCategoria
-            // 
-            this.btnEliminarCategoria.Location = new System.Drawing.Point(221, 297);
-            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
-            this.btnEliminarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarCategoria.TabIndex = 3;
-            this.btnEliminarCategoria.Text = "Eliminar";
-            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
-            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(7, 297);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarProducto.TabIndex = 1;
+            this.btnAgregarProducto.Text = "Agregar";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // FormGestionProductos
             // 
@@ -157,6 +169,7 @@
         private System.Windows.Forms.Button btnEliminarCategoria;
         private System.Windows.Forms.Button btnModificarCategoria;
         private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.Button btnAgregarProducto;
     }
 }
 

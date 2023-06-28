@@ -16,6 +16,7 @@ namespace MultipleWinforms
         private Categoria categoria;
         private bool modifica = false;
 
+     
         public FormGestionCategoria(RepositorioCategorias repositorioCategorias)
         {
             InitializeComponent();

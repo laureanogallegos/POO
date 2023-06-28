@@ -33,7 +33,7 @@ namespace MultipleWinforms
         private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
             var formGestionProducto = new FormGestionCategoria(repositorioCategorias);
-            formGestionProducto.ShowDialog();
+            formGestionProducto.Show();
             ActualizarGrillas();
         }
 
@@ -58,6 +58,13 @@ namespace MultipleWinforms
                 MessageBox.Show(mensaje);
             }
             else MessageBox.Show("No se ha seleccionado ninguna categoria.");
+            ActualizarGrillas();
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            var formGestionProducto = new FormGestionProducto(repositorioProductos, repositorioCategorias);
+            formGestionProducto.ShowDialog();
             ActualizarGrillas();
         }
     }

@@ -10,18 +10,39 @@ using System.Windows.Forms;
 
 namespace MultipleWinforms
 {
-    public partial class FormGestionProducto : Form
+    internal partial class FormGestionProducto : Form
     {
-        private object categoria;
-
-        public FormGestionProducto()
+      
+        private RepositorioProductos Productos;
+        private RepositorioCategorias repositorioCategorias;
+        public FormGestionProducto(RepositorioProductos repositorioProductos, RepositorioCategorias repositorioCategorias)
         {
+            Productos = repositorioProductos;
+            this.repositorioCategorias = repositorioCategorias;
             InitializeComponent();
+
+            cBoxCategorias.DataSource = null;
+            cBoxCategorias.DataSource = repositorioCategorias.Listar();
+            cBoxCategorias.DisplayMember = "Codigo";
         }
 
-        public FormGestionProducto(object categoria)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.categoria = categoria;
+            var producto = new Producto();
+            producto.Categoria = (Categoria)cBoxCategorias.SelectedItem;
+            producto.Codigo = txtCodigo.Text;
+            producto.PrecioVenta = Convert.ToInt32(txtPrecioVenta.Text);
+            producto.PrecioCompra = Convert.ToInt32(txtPrecioCompra.Text);
+            producto.Cantidad = Convert.ToInt32(txtCantidad.Text);
+            
+            var mensaje = Productos.Agregar(producto);
+            MessageBox.Show(mensaje);
+            this.Close();
+        }
+
+        private void FormGestionProducto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

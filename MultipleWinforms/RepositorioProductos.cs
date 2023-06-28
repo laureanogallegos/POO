@@ -18,7 +18,8 @@ namespace MultipleWinforms
 
         public string Agregar(Producto item)
         {
-            throw new NotImplementedException();
+            productos.Add(item);
+            return "Producto agregado exitosamente.";
         }
 
         public Producto Buscar(string parametro)
